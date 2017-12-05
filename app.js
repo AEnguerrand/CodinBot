@@ -14,6 +14,8 @@ client.commands.set('help', require('./srcs/features/help.js'));
 client.commands.set('roll', require('./srcs/features/roll.js'));
 client.commands.set('rewards', require('./srcs/features/rewards.js'));
 
+//All event when we use message event.
+client.on('guildMemberAdd', member => require('./srcs/events/guildMemberAdd.js')(client, member));
 //All event when the bot start
 client.on('ready', () => require('./srcs/events/ready.js')(client));
 //All event when we use message event.
