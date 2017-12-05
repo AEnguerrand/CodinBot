@@ -12,7 +12,6 @@ module.exports = (client, message, args) => {
 
         for (var i in save.users) {
             if (save.users[i].id == message.author.id) {
-                console.log("rewards:", save.users[i].rewards);
                 var keys = Object.keys(save.users[i].rewards);
                 for (var k in keys) {
                     if (save.users[i].rewards[keys[k]] == true) {

@@ -1,6 +1,21 @@
 var config = require('../../config/config.json');
 var save = require('../../config/save.json');
 
+function ChangeStatusReward(message, rewards, key, status) {
+  if (status && !rewards[key]) {
+    rewards[key] = true;
+    message.channel.send("<@" + message.author.id + "> got the reward **" + key + "**!");
+  }
+}
+
+function PostNumberRewardsHandler(message, rewards, nbPosts) {
+  ChangeStatusReward(message, rewards, "Newcomer", nbPosts >= 1);
+  ChangeStatusReward(message, rewards, "Intrigued", nbPosts >= 10);
+  ChangeStatusReward(message, rewards, "Concerned", nbPosts >= 50);
+  ChangeStatusReward(message, rewards, "Familiar", nbPosts >= 100);
+  ChangeStatusReward(message, rewards, "Chatty", nbPosts >= 250);
+}
+
 module.exports = (client, message) => {
     if (message.author.bot)
         return;
@@ -13,10 +28,7 @@ module.exports = (client, message) => {
         if (message.author.id == save.users[i].id) {
             save.users[i].nbPosts += 1;
             hasChanged = true;
-            if (save.users[i].nbPosts >= 1 && !save.users[i].rewards["First post"]) {
-                save.users[i].rewards["First post"] = true;
-                message.channel.send("<@" + message.author.id + "> got the reward **First post**!");
-            }
+            PostNumberRewardsHandler(message, save.users[i].rewards, save.users[i].nbPosts)
         }
     }
     if (hasChanged) {

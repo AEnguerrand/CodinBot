@@ -22,7 +22,18 @@ client.on('ready', () => {
                 "id": users[u].id,
                 "nbPosts": 0,
                 "rewards": {
-                    "First post": false
+                    "Newcomer": false,
+                    "Intrigued": false,
+                    "Concerned": false,
+                    "Familiar": false,
+                    "Chatty": false,
+                    "New challenger": false,
+                    "Regular": false,
+                    "I'm always here": false,
+                    "Puzzled": false,
+                    "Determined": false,
+                    "Veteran": false,
+                    "Four seasons, three camps": false,
                 }
               });
               console.log("User " + data.users.length + ":");
