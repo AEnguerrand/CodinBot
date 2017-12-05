@@ -1,6 +1,8 @@
-const config = require('../../config/config.json');
+var config = require('../../config/config.json');
 
 module.exports = (client, message, args) => {
+	delete require.cache[require.resolve("../../config/config.json")]
+
 	let rollargs = args.slice(0).join(' ');
     var result = Math.floor((Math.random() * 100) + 1);
 	if (args.length != 0) {

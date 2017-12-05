@@ -3,13 +3,9 @@ const fs = require('fs');
 class UserInfoSaver {
   //Saving into a file an JS Object stringified
   SaveUsersInfos(filePath, data) {
-    fs.writeFile(filePath, JSON.stringify(data), 'utf8', function(err) {
-      if (err) {
-        console.log(err);
-        return (false);
-      }
-      console.log("The file was saved!");
-    });
+    fs.writeFileSync(filePath, JSON.stringify(data), 'utf8');
+    console.log("The file was saved!");
+    return (true);
   }
 };
 
