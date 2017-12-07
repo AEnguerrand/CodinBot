@@ -13,6 +13,8 @@ client.commands = new Discord.Collection();
 client.commands.set('help', require('./srcs/features/help.js'));
 client.commands.set('roll', require('./srcs/features/roll.js'));
 client.commands.set('rewards', require('./srcs/features/rewards.js'));
+client.commands.set('give', require('./srcs/features/give.js'));
+client.commands.set('remove', require('./srcs/features/remove.js'));
 
 //All event when we use message event.
 client.on('guildMemberAdd', member => require('./srcs/events/guildMemberAdd.js')(client, member));
