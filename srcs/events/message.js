@@ -2,9 +2,9 @@ var config = require('../../config/config.json');
 var save = require('../../config/save.json');
 
 function ChangeStatusReward(message, rewards, key, status) {
-  if (status && !rewards[key]) {
-    rewards[key] = true;
-    message.channel.send("<@" + message.author.id + "> got the reward **" + key + "**!");
+  if (status != rewards[key]) {
+    rewards[key] = status;
+    message.channel.send("<@" + message.author.id + "> " + ((status) ? ("got") : ("lost")) + " the reward **" + key + "**!");
   }
 }
 
