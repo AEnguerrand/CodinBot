@@ -11,7 +11,8 @@ module.exports = (client, message, args) => {
     var infos = {
         "basics": ["**" + config.prefix + "help:** *Display this command*",
                    "**" + config.prefix + "roll [fact]:** *Randomly roll a number between 1 and 100*",
-                   "**" + config.prefix + "rewards:** *List all achievements available*"],
+                   "**" + config.prefix + "rewards:** *List all achievements available*",
+                   "**" + config.prefix + "lang " + config.langSupported.join("|") + " :** *Change your preferred language*"],
         "mod": ["**" + config.prefix + "give @user reward_to_give:** *Give to the @user a reward*",
                 "**" + config.prefix + "remove @user reward_to_remove:** *Remove from the @user a reward*"],
         "end": ["*The [] arguments means it's an optional argument, no need to put on brackets*"]

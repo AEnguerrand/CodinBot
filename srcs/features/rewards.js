@@ -12,18 +12,17 @@ module.exports = (client, message, args) => {
 
         for (var i in save.users) {
             if (save.users[i].id == message.author.id) {
-                var keys = Object.keys(save.users[i].rewards);
-                for (var k in keys) {
-                    if (save.users[i].rewards[keys[k]] == true) {
+                for (var k = 0; k < save.users[i].rewards.length; k++) {
+                    if (save.users[i].rewards[k]) {
                         if (completed != "") {
                             completed += '\n';
                         }
-                        completed += "**" + keys[k] + ":** *" + config.rewards[keys[k]] + "*";
+                        completed += "**" + config.rewards[k][save.users[i].language]["name"] + ":** *" + config.rewards[k][save.users[i].language]["description"] + "*";
                     } else {
                         if (inProgress != "") {
                             inProgress += '\n';
                         }
-                        inProgress += "**" + keys[k] + ":** *" + config.rewards[keys[k]] + "*";
+                        inProgress += "**" + config.rewards[k][save.users[i].language]["name"] + ":** *" + config.rewards[k][save.users[i].language]["description"] + "*";
                     }
                 }
             }

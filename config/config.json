@@ -2,18 +2,114 @@
   "token": "Mzc2NDM1MjQ4Njg4NTI5NDA4.DQcGcQ.y6AXnP3gTsl-Ig6nXIINJxALMkM",
   "prefix": "c!",
   "games": "with NodeJS",
-  "rewards": {
-      "Newcomer": "Post your first message on the Discord!",
-      "Intrigued": "Post a total of 10 messages",
-      "Concerned": "Post a total of 50 messages",
-      "Familiar": "Post a total of 100 messages",
-      "Chatty": "Post a total of 250 messages",
-      "New challenger": "Participate to your first CodingClub session!",
-      "Regular": "Participate to 2 CodingClub sessions",
-      "I'm always here": "Participate to 5 CodingClub sessions",
-      "Puzzled": "Participate to your first CodingClub camps!",
-      "Determined": "Participate to 2 CodingClub camps",
-      "Veteran": "Participate to 5 CodingClub camps",
-      "Four seasons, three camps": "Participate in all 3 CodingClub camps of the same year"
-  }
+  "langSupported": ["fr", "en"],
+  "rewards": [{
+      "fr": {
+        "name": "Nouvel arrivant",
+        "description": "Postez votre premier message sur le Discord!"
+      },
+      "en": {
+        "name": "Newcomer",
+        "description": "Post your first message on the Discord!"
+      }
+    }, {
+      "fr": {
+        "name": "Intrigué",
+        "description": "Postez un total de 10 messages"
+      },
+      "en": {
+        "name": "Intrigued",
+        "description": "Post a total of 10 messages"
+      }
+    }, {
+      "fr": {
+        "name": "Concerné",
+        "description": "Postez un total de 50 messages"
+      },
+      "en": {
+        "name": "Concerned",
+        "description": "Post a total of 50 messages"
+      }
+    }, {
+      "fr": {
+        "name": "Familier",
+        "description": "Postez un total de 100 messages"
+      },
+      "en": {
+        "name": "Familiar",
+        "description": "Post a total of 100 messages"
+      }
+    }, {
+      "fr": {
+        "name": "Bavard",
+        "description": "Postez un total de 250 messages"
+      },
+      "en": {
+        "name": "Chatty",
+        "description": "Post a total of 250 messages"
+      }
+    }, {
+      "fr": {
+        "name": "Nouveau challenger",
+        "description": "Participez à votre toute première session de CodingClub!"
+      },
+      "en": {
+        "name": "New challenger",
+        "description": "Participate to your first CodingClub session!"
+      }
+    }, {
+      "fr": {
+        "name": "Régulier",
+        "description": "Participez à 2 sessions de CodingClub"
+      },
+      "en": {
+        "name": "Regular",
+        "description": "Participate to 2 CodingClub sessions"
+      }
+    }, {
+      "fr": {
+        "name": "Je suis toujours là",
+        "description": "Participez à 5 sessions de CodingClub"
+      },
+      "en": {
+        "name": "I'm always here",
+        "description": "Participate to 5 CodingClub sessions"
+      }
+    }, {
+      "fr": {
+        "name": "Débutant",
+        "description": "Participez à votre tout premier camp de CodingClub!"
+      },
+      "en": {
+        "name": "Beginner",
+        "description": "Participate to your first CodingClub camp!"
+      }
+    }, {
+      "fr": {
+        "name": "Déterminé",
+        "description": "Participez à 2 camps de CodingClub"
+      },
+      "en": {
+        "name": "Determined",
+        "description": "Participate to 2 CodingClub camps"
+      }
+    }, {
+      "fr": {
+        "name": "Vétéran",
+        "description": "Participez à 5 camps de CodingClub"
+      },
+      "en": {
+        "name": "Veteran",
+        "description": "Participate to 5 CodingClub camps"
+      }
+    }, {
+      "fr": {
+        "name": "Quatre saisons, trois camps",
+        "description": "Participez aux 3 camps de CodingClub d'une même année"
+      },
+      "en": {
+        "name": "Four seasons, three camps",
+        "description": "Participate in all 3 CodingClub camps of the same year"
+      }
+    }]
 }
