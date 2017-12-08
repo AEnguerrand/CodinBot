@@ -1,0 +1,249 @@
+{
+  "rewards": {
+      "listRewards": [{
+          "fr": {
+            "name": "Nouvel arrivant",
+            "description": "Postez votre premier message sur le Discord!"
+          },
+          "en": {
+            "name": "Newcomer",
+            "description": "Post your first message on the Discord!"
+          }
+        }, {
+          "fr": {
+            "name": "Intrigué",
+            "description": "Postez un total de 10 messages"
+          },
+          "en": {
+            "name": "Intrigued",
+            "description": "Post a total of 10 messages"
+          }
+        }, {
+          "fr": {
+            "name": "Concerné",
+            "description": "Postez un total de 50 messages"
+          },
+          "en": {
+            "name": "Concerned",
+            "description": "Post a total of 50 messages"
+          }
+        }, {
+          "fr": {
+            "name": "Familier",
+            "description": "Postez un total de 100 messages"
+          },
+          "en": {
+            "name": "Familiar",
+            "description": "Post a total of 100 messages"
+          }
+        }, {
+          "fr": {
+            "name": "Bavard",
+            "description": "Postez un total de 250 messages"
+          },
+          "en": {
+            "name": "Chatty",
+            "description": "Post a total of 250 messages"
+          }
+        }, {
+          "fr": {
+            "name": "Nouveau challenger",
+            "description": "Participez à votre toute première session de CodingClub!"
+          },
+          "en": {
+            "name": "New challenger",
+            "description": "Participate to your first CodingClub session!"
+          }
+        }, {
+          "fr": {
+            "name": "Régulier",
+            "description": "Participez à 2 sessions de CodingClub"
+          },
+          "en": {
+            "name": "Regular",
+            "description": "Participate to 2 CodingClub sessions"
+          }
+        }, {
+          "fr": {
+            "name": "Je suis toujours là",
+            "description": "Participez à 5 sessions de CodingClub"
+          },
+          "en": {
+            "name": "I'm always here",
+            "description": "Participate to 5 CodingClub sessions"
+          }
+        }, {
+          "fr": {
+            "name": "Débutant",
+            "description": "Participez à votre tout premier camp de CodingClub!"
+          },
+          "en": {
+            "name": "Beginner",
+            "description": "Participate to your first CodingClub camp!"
+          }
+        }, {
+          "fr": {
+            "name": "Déterminé",
+            "description": "Participez à 2 camps de CodingClub"
+          },
+          "en": {
+            "name": "Determined",
+            "description": "Participate to 2 CodingClub camps"
+          }
+        }, {
+          "fr": {
+            "name": "Vétéran",
+            "description": "Participez à 5 camps de CodingClub"
+          },
+          "en": {
+            "name": "Veteran",
+            "description": "Participate to 5 CodingClub camps"
+          }
+        }, {
+          "fr": {
+            "name": "Quatre saisons, trois camps",
+            "description": "Participez aux 3 camps de CodingClub d'une même année"
+          },
+          "en": {
+            "name": "Four seasons, three camps",
+            "description": "Participate in all 3 CodingClub camps of the same year"
+          }
+      }],
+      "descriptionEmbed": {
+        "fr": "Liste des succès",
+        "en": "Rewards list"
+      },
+      "footerEmbed": {
+        "fr": "CodinBot - Liste des succès",
+        "en": "CodinBot - Rewards list"
+      },
+      "completed": {
+        "fr": "Complété:",
+        "en": "Completed:"
+      },
+      "inProgress": {
+        "fr": "En cours:",
+        "en": "In progress:"
+      },
+      "completedEmpty": {
+        "fr": "Vous n'avez aucun succès :(",
+        "en": "You have no completed rewards :("
+      },
+      "inProgressEmpty": {
+        "fr": "Tous les succès ont été attribué! :D",
+        "en": "All rewards has been awarded! :D"
+      }
+  },
+  "help": {
+      "fr": {
+          "help": {
+              "command": "help",
+              "description": "Affiche cette commande"
+          },
+          "roll": {
+              "command": "roll [fait]",
+              "description": "Choisit aléatoirement un nombre compris entre 0 et 100"
+          },
+          "rewards": {
+              "command": "rewards",
+              "description": "Liste tous les succès disponibles"
+          },
+          "lang": {
+              "command": "lang ",
+              "description": "Change votre langage préféré"
+          },
+          "give": {
+              "command": "give @user succes_a_donner",
+              "description": "Donne au @user un succès"
+          },
+          "remove": {
+              "command": "remove @user succes_a_enlever",
+              "description": "Enlève au @user un succès"
+          },
+          "end" : "Les arguments [] signifient que c'est un argument optionnel, il ne faut pas mettre les crochets",
+          "descriptionEmbed" : "Liste des commandes",
+          "footerEmbed" : "CodinBot - Liste des commandes",
+          "basics" : "Commandes basiques:",
+          "mods" : "Commandes de modération (modérateurs seulement):"
+      },
+      "en": {
+          "help": {
+              "command": "help",
+              "description": "Display this command"
+          },
+          "roll": {
+              "command": "roll [fact]",
+              "description": "Randomly roll a number between 1 and 100"
+          },
+          "rewards": {
+              "command": "rewards",
+              "description": "List all achievements available"
+          },
+          "lang": {
+              "command": "lang ",
+              "description": "Change your preferred language"
+          },
+          "give": {
+              "command": "give @user reward_to_give",
+              "description": "Give to the @user a reward"
+          },
+          "remove": {
+              "command": "remove @user reward_to_remove",
+              "description": "Remove from the @user a reward"
+          },
+          "end" : "The [] arguments means it's an optional argument, no need to put on brackets",
+          "descriptionEmbed" : "Commands list",
+          "footerEmbed" : "CodinBot - Commands list",
+          "basics": "Basics commands:",
+          "mods": "Moderation commands (mods only):"
+      }
+  },
+  "statusReward": {
+      "fr": {
+          "give": "a reçu le succès",
+          "remove": "a perdu le succès"
+      },
+      "en": {
+          "give": "got the reward",
+          "remove": "lost the reward"
+      }
+  },
+  "badArguments": {
+      "fr": "Vous avez inséré de mauvais arguments, utilisez ça à la place:",
+      "en": "You've inserted bad arguments, use this instead:"
+  },
+  "lang": {
+      "fr": {
+          "success": "votre langage préféré a été changé en",
+          "failed1": "Le langage",
+          "failed2": "n'est pas supporté."
+      },
+      "en": {
+          "success": "your preferred language has been changed into",
+          "failed1": "The language",
+          "failed2": "is not supported."
+      }
+  },
+  "giveRemove": {
+      "fr": {
+          "failedNotExists1": "Le succès",
+          "failedNotExists2": "n'existe pas.",
+          "failedPermission": "Vous n'avez pas la permission d'utiliser cette commande.."
+      },
+      "en": {
+          "failedNotExists1": "The reward",
+          "failedNotExists2": "does not exist.",
+          "failedPermission": "You don't have the permission to use that command.."
+      }
+  },
+  "roll": {
+      "fr": {
+          "successNoArgs": "vous avez roll le nombre",
+          "successArgs": "vous a fait avoir le nombre"
+      },
+      "en": {
+          "successNoArgs": "you rolled the number",
+          "successArgs": "gives you the number"
+      }
+  }
+}
