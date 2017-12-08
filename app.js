@@ -15,6 +15,7 @@ client.commands.set('roll', require('./srcs/features/roll.js'));
 client.commands.set('rewards', require('./srcs/features/rewards.js'));
 client.commands.set('give', require('./srcs/features/give.js'));
 client.commands.set('remove', require('./srcs/features/remove.js'));
+client.commands.set('lang', require('./srcs/features/lang.js'));
 
 //All event when we use message event.
 client.on('guildMemberAdd', member => require('./srcs/events/guildMemberAdd.js')(client, member));

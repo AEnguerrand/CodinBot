@@ -21,20 +21,8 @@ client.on('ready', () => {
               data.users.push({
                 "id": users[u].id,
                 "nbPosts": 0,
-                "rewards": {
-                    "Newcomer": false,
-                    "Intrigued": false,
-                    "Concerned": false,
-                    "Familiar": false,
-                    "Chatty": false,
-                    "New challenger": false,
-                    "Regular": false,
-                    "I'm always here": false,
-                    "Puzzled": false,
-                    "Determined": false,
-                    "Veteran": false,
-                    "Four seasons, three camps": false,
-                }
+                "language": "fr",
+                "rewards": [false, false, false, false, false, false, false, false, false, false, false, false]
               });
               console.log("User " + data.users.length + ":");
               console.log(client.users.get(data.users[data.users.length - 1].id).username)

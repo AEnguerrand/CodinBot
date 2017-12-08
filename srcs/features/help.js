@@ -1,22 +1,32 @@
 const Discord = require('discord.js');
 var config = require('../../config/config.json');
+var save = require('../../config/save.json');
+var localization = require('../../config/localization.json');
 
 module.exports = (client, message, args) => {
 	delete require.cache[require.resolve("../../config/config.json")]
-    var embed = new Discord.RichEmbed().setDescription('Commands list')
-                                       .setAuthor(message.author.tag, message.author.avatarURL)
-                                       .setColor(0x732211)
-                                       .setFooter('CodinBot - Commands list')
-                                       .setTimestamp()
-    var infos = {
-        "basics": ["**" + config.prefix + "help:** *Display this command*",
-                   "**" + config.prefix + "roll [fact]:** *Randomly roll a number between 1 and 100*",
-                   "**" + config.prefix + "rewards:** *List all achievements available*"],
-        "mod": ["**" + config.prefix + "give @user reward_to_give:** *Give to the @user a reward*",
-                "**" + config.prefix + "remove @user reward_to_remove:** *Remove from the @user a reward*"],
-        "end": ["*The [] arguments means it's an optional argument, no need to put on brackets*"]
-    }
-    embed.addField("Basics commands:", infos.basics.join("\n"));
-	embed.addField("Moderation commands (mods only):", infos.mod.join("\n") + "\n\n" + infos.end.join("\n"));
-    message.channel.send(embed);
+	delete require.cache[require.resolve("../../config/save.json")]
+	delete require.cache[require.resolve("../../config/localization.json")]
+	for (var i in save.users) {
+			if (save.users[i].id == message.author.id) {
+				var lang = save.users[i].language;
+		    var embed = new Discord.RichEmbed().setDescription(localization.help[lang]["descriptionEmbed"])
+		                                       .setAuthor(message.author.tag, message.author.avatarURL)
+		                                       .setColor(0x732211)
+		                                       .setFooter(localization.help[lang]["footerEmbed"])
+		                                       .setTimestamp()
+				var infos = {
+						"basics": ["**" + config.prefix + localization.help[lang]["help"].command + ":** *" + localization.help[lang]["help"].description + "*",
+											 "**" + config.prefix + localization.help[lang]["roll"].command + ":** *" + localization.help[lang]["roll"].description + "*",
+				 							 "**" + config.prefix + localization.help[lang]["rewards"].command + ":** *" + localization.help[lang]["rewards"].description + "*",
+											 "**" + config.prefix + localization.help[lang]["lang"].command + config.langSupported.join("|") + " :** *" + localization.help[lang]["lang"].description + "*"],
+						"mod": ["**" + config.prefix + localization.help[lang]["give"].command + ":** *" + localization.help[lang]["give"].description + "*",
+										"**" + config.prefix + localization.help[lang]["remove"].command + ":** *" + localization.help[lang]["remove"].description + "*"],
+						"end": ["*" + localization.help[lang]["end"] + "*"]
+				}
+				embed.addField(localization.help[lang]["basics"], infos.basics.join("\n"));
+				embed.addField(localization.help[lang]["mods"], infos.mod.join("\n") + "\n\n" + infos.end.join("\n"));
+				message.channel.send(embed);
+			}
+	}
 };

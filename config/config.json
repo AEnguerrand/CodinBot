@@ -2,18 +2,5 @@
   "token": "Mzc2NDM1MjQ4Njg4NTI5NDA4.DQcGcQ.y6AXnP3gTsl-Ig6nXIINJxALMkM",
   "prefix": "c!",
   "games": "with NodeJS",
-  "rewards": {
-      "Newcomer": "Post your first message on the Discord!",
-      "Intrigued": "Post a total of 10 messages",
-      "Concerned": "Post a total of 50 messages",
-      "Familiar": "Post a total of 100 messages",
-      "Chatty": "Post a total of 250 messages",
-      "New challenger": "Participate to your first CodingClub session!",
-      "Regular": "Participate to 2 CodingClub sessions",
-      "I'm always here": "Participate to 5 CodingClub sessions",
-      "Puzzled": "Participate to your first CodingClub camps!",
-      "Determined": "Participate to 2 CodingClub camps",
-      "Veteran": "Participate to 5 CodingClub camps",
-      "Four seasons, three camps": "Participate in all 3 CodingClub camps of the same year"
-  }
+  "langSupported": ["fr", "en"]
 }
