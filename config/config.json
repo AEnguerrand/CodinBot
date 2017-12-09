@@ -1,6 +1,0 @@
-{
-  "token": "YOUR-TOKEN-HERE",
-  "prefix": "c!",
-  "games": "with NodeJS",
-  "langSupported": ["fr", "en"]
-}
