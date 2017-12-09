@@ -1,0 +1,42 @@
+{
+	"commands": {
+		"help": {
+			"header": "Help command:",
+			"description": "everyone need help"
+		},
+		"lang": {
+			"description": "change your lang",
+			"changed": "Changed!"
+		},
+		"achievement": {
+			"description": "show yours achievements",
+			"header": {
+				"0": "You have unlock",
+				"1": "achievement:"
+			},
+			"unlock": "Congrulations you've unlock the achievement :"
+		}
+	},
+	"achievements": {
+		"newcomer": {
+			"name": "Newcomer",
+			"description": "Post your first message on the Discord!"
+		},
+		"intrigued": {
+			"name": "Intrigued",
+			"description": "Post a total of 10 messages"
+		},
+		"concerned": {
+			"name": "Concerned",
+			"description": "Post a total of 50 messages"
+		},
+		"familiar": {
+			"name": "Familiar",
+			"description": "Post a total of 100 messages"
+		},
+		"chatty": {
+			"name": "Chatty",
+			"description": "Post a total of 250 messages"
+		}
+	}
+}
