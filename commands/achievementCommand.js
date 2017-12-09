@@ -62,8 +62,7 @@ export class AchievementCommand extends CommandHandler {
         const userData = event.getUserData();
         let message = `:military_medal: ${this.tl(userData, "commands.achievement.header.0")} ${userData.achievements.length} ${this.tl(userData, "commands.achievement.header.1")}`;
         ACHIEVEMENTS
-            .filter((achievement) => userData.achievements.indexOf(achievement.key) !== -1)
-            .forEach((achievement) =>  message += `\n\t- ${this.tl(userData, `achievements.${achievement.key}.name`)} : ${this.tl(userData, `achievements.${achievement.key}.description`)}`);
+            .forEach((achievement) =>  message += `\n\t- ${achievement.condition(userData) ? ":white_check_mark:" : ":negative_squared_cross_mark:"} ${this.tl(userData, `achievements.${achievement.key}.name`)} : ${this.tl(userData, `achievements.${achievement.key}.description`)}`);
         event.getUser().sendMessage(message);
     }
 }
