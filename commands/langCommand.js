@@ -9,7 +9,7 @@ export class LangCommand extends CommandHandler {
 
     onCommand(event) {
         if (event.getChannel() instanceof TextChannel) {
-            event.delete();
+            event.getDiscordEvent().delete();
         }
         
         if (event.getArguments().length >= 1) {
