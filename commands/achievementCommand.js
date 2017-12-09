@@ -21,7 +21,7 @@ export const ACHIEVEMENTS = [
     },
     {
         key: "chatty",
-        condition: (user) => user.messages >= 100
+        condition: (user) => user.messages >= 250
     }
 ];
 
