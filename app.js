@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 //Use a config file to get prefix, token, etc
-var config = require('./config/config.json');
+const config = require('./config/config.json');
 
 //Define *client* is a ClientUser
 const client = new Discord.Client();
