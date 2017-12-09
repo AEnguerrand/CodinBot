@@ -55,8 +55,8 @@ export class AchievementCommand extends CommandHandler {
     }
 
     onCommand(event) {
-        if (event.channel instanceof TextChannel) {
-            event.delete();
+        if (event.getChannel() instanceof TextChannel) {
+            event.getDiscordEvent().delete();
         }
 
         const userData = event.getUserData();

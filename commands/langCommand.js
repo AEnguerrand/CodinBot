@@ -8,7 +8,7 @@ export class LangCommand extends CommandHandler {
     }
 
     onCommand(event) {
-        if (event.channel instanceof TextChannel) {
+        if (event.getChannel() instanceof TextChannel) {
             event.delete();
         }
         

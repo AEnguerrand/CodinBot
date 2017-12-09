@@ -7,8 +7,8 @@ export class HelpCommand extends CommandHandler {
     }
 
     onCommand(event) {
-        if (event.channel instanceof TextChannel) {
-            event.delete();
+        if (event.getChannel() instanceof TextChannel) {
+            event.getDiscordEvent().delete();
         }
         
         let message = `**${this.tl(event.getUserData(), "commands.help.header")}**`;
