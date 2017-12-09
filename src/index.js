@@ -1,6 +1,9 @@
 import Commander from "commander";
+import i18n from "i18n";
+import path from "path";
 import {Client} from "discord.js";
 import {CommandManager, CommandHandler} from "./command";
+import {HelpCommand} from "../commands/helpCommand";
 
 Commander
     .name("pico-bot")
@@ -11,11 +14,18 @@ Commander
     .option("--prefix [prefix]", "set a command prefix")
     .parse(process.argv);
 
+i18n.configure({
+    locales:["fr", "en"],
+    objectNotation: true,
+    directory: path.join(__dirname, "locale")
+});
+
 const {token, prefix, currentGame} = Commander; // magie noire ^.^
 
 if (token) { // on nous passe un token donc on peut se connecter
     const client = new Client();
     const commandManager = client.commandManager = new CommandManager(client, prefix || "");
+    commandManager.addCommand(new HelpCommand());
 
     client.on("ready", () => {
         console.log("Your bot is online!");
@@ -26,7 +36,7 @@ if (token) { // on nous passe un token donc on peut se connecter
 
     client.on("disconnect", (event) => {
         console.error("Oopss, you are disconnected.");
-        console.error("Reason: (%d) %s", event.code, event.reason);
+        console.error(`Reason: (${event.code}) ${event.reason}`);
         process.exit(1);
     });
 

@@ -1,7 +1,5 @@
 import {EventEmitter} from "events";
-import { HelpCommand } from "./default/helpCommand";
-import { AchievementCommand } from "./default/achievementCommand";
-import { GiveAchievementCommand } from "./default/giveAchievementCommand";
+import CommandEvent from "./commandEvent";
 
 export default class CommandManager extends EventEmitter {
     constructor(client, prefix) {
@@ -10,10 +8,6 @@ export default class CommandManager extends EventEmitter {
         this.client = client;
         this.prefix = prefix;
         this.registeredCommands = [];
-
-        this.addCommand(new HelpCommand());
-        this.addCommand(new AchievementCommand());
-        this.addCommand(new GiveAchievementCommand());
     }
 
     addCommand(commandHandler) {
@@ -22,8 +16,11 @@ export default class CommandManager extends EventEmitter {
     }
 
     onMessage(event) {
-        this.registeredCommands
-            .filter((command) => event.content.startsWith(this.prefix + command.name))
-            .forEach((command) => command.onCommand(event));
+        if (!event.author.bot) {
+            let cmdEvent = new CommandEvent(event);
+            this.registeredCommands
+                .filter((command) => event.content.startsWith(this.prefix + command.name))
+                .forEach((command) => command.onCommand(cmdEvent));
+        }
     }
 }

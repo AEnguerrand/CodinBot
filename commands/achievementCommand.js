@@ -41,8 +41,9 @@ export class AchievementCommand extends CommandHandler {
     }
 
     onMessage(event) {
-        let userData = Storage.get("users."+ event.author.id).value() || {id: event.author.id, messages: 0, achievements: []};
+        let userData = Storage.loadUserData(event.author);
         userData.username = event.author.username;
+        
         if (!event.author.bot) {
             if (event.channel instanceof TextChannel) {
                 userData.messages++;
@@ -54,7 +55,7 @@ export class AchievementCommand extends CommandHandler {
                         event.author.sendMessage(`:tada: Félicitations vous venez de débloquer le succès : "${achievement.name}"`);
                     });
             }
-            Storage.set("users."+ event.author.id, userData).write();   
+            Storage.saveUserData(event.author, userData);
         }
     }
 

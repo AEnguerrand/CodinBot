@@ -1,0 +1,30 @@
+{
+	"commands": {
+		"help": {
+			"header": "Aide aux commandes :",
+			"description": "aide aux commandes"
+		}
+	},
+	"achievements": {
+		"newcomer": {
+			"name": "Nouvel arrivant",
+			"description": "Postez votre premier message sur le Discord!"
+		},
+		"intrigued": {
+			"name": "Intrigué",
+			"description": "Postez un total de 10 messages"
+		},
+		"concerned": {
+			"name": "Concerné",
+			"description": "Postez un total de 50 messages"
+		},
+		"familiar": {
+			"name": "Familier",
+			"description": "Postez un total de 100 messages"
+		},
+		"chatty": {
+			"name": "Bavard",
+			"description": "Postez un total de 250 messages"
+		}
+	}
+}

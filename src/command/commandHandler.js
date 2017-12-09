@@ -1,7 +1,12 @@
+import i18n from "i18n";
+
 export default class CommandHandler {
-    constructor(name, description) {
+    constructor(name) {
         this.name = name;
-        this.description = description;
+    }
+
+    tl(user, key) {
+        return i18n.__({phrase: key, locale: user.lang});
     }
 
     onInit(client) {
@@ -9,6 +14,6 @@ export default class CommandHandler {
     }
 
     onCommand(event) {
-        console.warn("Unhandled %s command!", this.name);
+        console.warn(`Unhandled ${this.name} command!`);
     }
 }

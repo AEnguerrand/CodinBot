@@ -6,6 +6,7 @@
   "dependencies": {
     "commander": "^2.12.2",
     "discord.js": "^11.2.1",
+    "i18n": "^0.8.3",
     "lowdb": "^1.0.0"
   },
   "devDependencies": {
