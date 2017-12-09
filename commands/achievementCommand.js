@@ -1,38 +1,33 @@
-import CommandHandler from "../commandHandler";
+import CommandHandler from "../src/command/commandHandler";
 import {TextChannel} from "discord.js";
-import Storage from "../../storage";
+import {loadUserData, saveUserData} from "../src/storage";
 
 export const ACHIEVEMENTS = [
     {
-        name: "Nouvel arrivant",
-        description: "Postez votre premier message sur le Discord!",
+        key: "newcomer",
         condition: (user) => user.messages >= 1
     },
     {
-        name: "Intrigué",
-        description: "Postez un total de 10 messages",
+        key: "intrigued",
         condition: (user) => user.messages >= 10
     },
     {
-        name: "Concerné",
-        description: "Postez un total de 50 messages",
+        key: "concerned",
         condition: (user) => user.messages >= 50
     },
     {
-        name: "Familier",
-        description: "Postez un total de 100 messages",
+        key: "familiar",
         condition: (user) => user.messages >= 100
     },
     {
-        name: "Bavard",
-        description: "Postez un total de 250 messages",
+        key: "chatty",
         condition: (user) => user.messages >= 100
     }
 ];
 
 export class AchievementCommand extends CommandHandler {
     constructor() {
-        super("achievement", "permet de voir nos succès");
+        super("achievement");
     }
 
     onInit(client) {
@@ -41,7 +36,7 @@ export class AchievementCommand extends CommandHandler {
     }
 
     onMessage(event) {
-        let userData = Storage.loadUserData(event.author);
+        let userData = loadUserData(event.author);
         userData.username = event.author.username;
         
         if (!event.author.bot) {
@@ -49,13 +44,13 @@ export class AchievementCommand extends CommandHandler {
                 userData.messages++;
                 
                 ACHIEVEMENTS
-                    .filter((achievement) => achievement.condition(userData) && userData.achievements.indexOf(achievement) === -1)
+                    .filter((achievement) => achievement.condition(userData) && userData.achievements.indexOf(achievement.key) === -1)
                     .forEach((achievement) => {
-                        userData.achievements.push(achievement);
-                        event.author.sendMessage(`:tada: Félicitations vous venez de débloquer le succès : "${achievement.name}"`);
+                        userData.achievements.push(achievement.key);
+                        event.author.sendMessage(`:tada: ${this.tl(userData, "commands.achievement.unlock")} "${this.tl(userData, `achievements.${achievement.key}.name`)}"`);
                     });
             }
-            Storage.saveUserData(event.author, userData);
+            saveUserData(event.author, userData);
         }
     }
 
@@ -64,10 +59,11 @@ export class AchievementCommand extends CommandHandler {
             event.delete();
         }
 
-        const userData = Storage.get("users."+ event.author.id).value() || {id: event.author.id, messages: 0, achievements: []};
-        let message = `:golf: Vous avez débloqué ${userData.achievements.length} succès :`;
-        userData.achievements.forEach((achievement) => 
-            message += `\n\t- ${achievement.name} : ${achievement.description}`);
-        event.author.sendMessage(message);
+        const userData = event.getUserData();
+        let message = `:military_medal: ${this.tl(userData, "commands.achievement.header.0")} ${userData.achievements.length} ${this.tl(userData, "commands.achievement.header.1")}`;
+        ACHIEVEMENTS
+            .filter((achievement) => userData.achievements.indexOf(achievement.key) !== -1)
+            .forEach((achievement) =>  message += `\n\t- ${this.tl(userData, `achievements.${achievement.key}.name`)} : ${this.tl(userData, `achievements.${achievement.key}.description`)}`);
+        event.getUser().sendMessage(message);
     }
 }

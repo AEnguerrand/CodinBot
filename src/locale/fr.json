@@ -3,6 +3,18 @@
 		"help": {
 			"header": "Aide aux commandes :",
 			"description": "aide aux commandes"
+		},
+		"lang": {
+			"description": "permet de changer votre langue",
+			"changed": "Changé !"
+		},
+		"achievement": {
+			"description": "permet de voir nos succès",
+			"header": {
+				"0": "Vous avez débloqué",
+				"1": "succès :"
+			},
+			"unlock": "Félicitations vous venez de débloquer le succès :"
 		}
 	},
 	"achievements": {

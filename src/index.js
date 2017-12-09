@@ -4,6 +4,8 @@ import path from "path";
 import {Client} from "discord.js";
 import {CommandManager, CommandHandler} from "./command";
 import {HelpCommand} from "../commands/helpCommand";
+import { AchievementCommand } from "../commands/achievementCommand";
+import { LangCommand } from "../commands/langCommand";
 
 Commander
     .name("pico-bot")
@@ -26,6 +28,8 @@ if (token) { // on nous passe un token donc on peut se connecter
     const client = new Client();
     const commandManager = client.commandManager = new CommandManager(client, prefix || "");
     commandManager.addCommand(new HelpCommand());
+    commandManager.addCommand(new AchievementCommand());
+    commandManager.addCommand(new LangCommand());
 
     client.on("ready", () => {
         console.log("Your bot is online!");
